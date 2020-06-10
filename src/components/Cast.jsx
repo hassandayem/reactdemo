@@ -1,10 +1,14 @@
-import React from 'react';
-import { Thumbnail } from 'react-bootstrap/lib';
-import { URL_IMG, IMG_SIZE_SMALL } from '../const';
+import React from "react";
+import { Thumbnail } from "react-bootstrap/lib";
+import { URL_IMG, IMG_SIZE_CAST } from "../const";
 
-export default function Cast({cast}) {
+export default function Cast({ cast }) {
   return (
-    <Thumbnail src={URL_IMG+IMG_SIZE_SMALL+cast.profile_path} alt={cast.name} >
+    <Thumbnail
+      src={URL_IMG + IMG_SIZE_CAST + cast.profile_path}
+      alt={cast.name}
+      className="cast-profile-img"
+    >
       <p>{cast.name}</p>
     </Thumbnail>
   );
@@ -14,5 +18,5 @@ Cast.propTypes = {
   cast: React.PropTypes.shape({
     profile_path: React.PropTypes.string.isRequired,
     name: React.PropTypes.string.isRequired,
-  })
+  }),
 };
